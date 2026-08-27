@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -134,7 +133,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 .sj-progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:linear-gradient(90deg,var(--sand),var(--teal))}
 .sj-progress-plane{position:absolute;top:50%;width:20px;height:20px;transform:translate(-50%,-50%);left:0%}
 .sj-progress-plane svg{width:100%;height:100%;fill:#fff}
-.sj-spacer{height:300vh}
+.sj-spacer{height:200vh}
 .zanzibar-ed{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
 .ze-bg{position:absolute;inset:0}.ze-bg img{width:100%;height:100%;object-fit:cover}
 .ze-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,20,40,.5) 0%,rgba(6,20,40,.35) 40%,rgba(6,20,40,.7) 100%)}
@@ -275,7 +274,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 <h1>UK to Zanzibar Flight Deals</h1>
 <p class="hero-lead">Your journey from the UK to the Indian Ocean starts here. Explore flight options to Zanzibar and find a journey that fits your plans.</p>
 <div class="hero-ctas">
-<a href="#search" class="btn btn-teal">Explore Flights →</a>
+<a href="https://dial4uflights.co.uk/" class="btn btn-teal">Explore Flights →</a>
 <a href="tel:+442038317712" class="btn btn-ghost">Speak to a Flight Expert</a>
 </div>
 <div class="hero-route" aria-hidden="true">
@@ -286,18 +285,37 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 </div>
 </section>
 <div class="search-float" id="search">
-<form class="search-panel" action="https://dial4uflights.co.uk/MetaSearch" method="get">
+<form class="search-panel" action="https://dial4uflights.co.uk/" method="get" id="znzSearchForm">
 <h2 class="search-title">Find Your Way to Zanzibar</h2>
 <div class="trip-pills" role="radiogroup" aria-label="Trip type">
 <button type="button" class="on" data-trip="return" role="radio" aria-checked="true">Return</button>
 <button type="button" data-trip="oneway" role="radio" aria-checked="false">One Way</button>
 </div>
-<input type="hidden" name="dest" value="ZNZ"><input type="hidden" name="isReturn" id="isRet" value="true"><input type="hidden" name="classType" value="Y"><input type="hidden" name="adt" id="adtVal" value="1"><input type="hidden" name="chd" value="0"><input type="hidden" name="inf" value="0">
+<input type="hidden" name="dest" value="ZNZ">
+<input type="hidden" name="isReturn" id="isRet" value="true">
+<input type="hidden" name="classType" value="Y">
+<input type="hidden" name="adt" id="adtVal" value="1">
+<input type="hidden" name="chd" value="0">
+<input type="hidden" name="inf" value="0">
+<input type="hidden" name="airline" value="">
+<input type="hidden" name="DFlights" value="false">
 <div class="search-row">
-<div class="fld"><label for="fromIn">From</label><input type="text" id="fromIn" name="org" placeholder="London / Manchester / UK Airport" required></div>
-<div class="fld"><label for="toIn">To</label><input type="text" id="toIn" value="Zanzibar (ZNZ)" disabled></div>
-<div class="fld"><label for="depIn">Departure</label><input type="text" id="depIn" name="departDate" placeholder="Select date" onfocus="this.type='date'"></div>
-<div class="fld" id="retFld"><label for="retIn">Return</label><input type="text" id="retIn" name="returnDate" placeholder="Select date" onfocus="this.type='date'"></div>
+<div class="fld"><label for="fromIn">From</label>
+<select id="fromIn" name="org" required>
+<option value="LON" selected>London (All)</option>
+<option value="LHR">London Heathrow (LHR)</option>
+<option value="LGW">London Gatwick (LGW)</option>
+<option value="STN">London Stansted (STN)</option>
+<option value="LTN">London Luton (LTN)</option>
+<option value="MAN">Manchester (MAN)</option>
+<option value="BHX">Birmingham (BHX)</option>
+<option value="EDI">Edinburgh (EDI)</option>
+<option value="GLA">Glasgow (GLA)</option>
+</select>
+</div>
+<div class="fld"><label for="toIn">To</label><input type="text" id="toIn" value="Zanzibar (ZNZ)" disabled aria-disabled="true"></div>
+<div class="fld"><label for="depIn">Departure</label><input type="date" id="depIn" name="departDate" required></div>
+<div class="fld" id="retFld"><label for="retIn">Return</label><input type="date" id="retIn" name="returnDate"></div>
 <div class="fld"><label for="travIn">Travellers</label><select id="travIn" onchange="document.getElementById('adtVal').value=this.value"><option value="1">1 Adult</option><option value="2">2 Adults</option><option value="3">3 Adults</option><option value="4">4 Adults</option></select></div>
 <button type="submit" class="btn btn-teal">Search Flights</button>
 </div>
@@ -314,11 +332,11 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 <div class="wrap">
 <div class="board-head rv"><p class="label">UK Departure Points</p><h2>Choose Your Departure</h2></div>
 <div class="board">
-<a class="board-row rv" href="https://dial4uflights.co.uk/MetaSearch?org=LON&dest=ZNZ&adt=1&chd=0&inf=0&classType=Y&isReturn=true"><div><div class="board-city">London <span class="code">LON</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
-<a class="board-row rv" href="https://dial4uflights.co.uk/MetaSearch?org=MAN&dest=ZNZ&adt=1&chd=0&inf=0&classType=Y&isReturn=true"><div><div class="board-city">Manchester <span class="code">MAN</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
-<a class="board-row rv" href="https://dial4uflights.co.uk/MetaSearch?org=BHX&dest=ZNZ&adt=1&chd=0&inf=0&classType=Y&isReturn=true"><div><div class="board-city">Birmingham <span class="code">BHX</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
-<a class="board-row rv" href="https://dial4uflights.co.uk/MetaSearch?org=EDI&dest=ZNZ&adt=1&chd=0&inf=0&classType=Y&isReturn=true"><div><div class="board-city">Edinburgh <span class="code">EDI</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
-<a class="board-row rv" href="https://dial4uflights.co.uk/MetaSearch?org=GLA&dest=ZNZ&adt=1&chd=0&inf=0&classType=Y&isReturn=true"><div><div class="board-city">Glasgow <span class="code">GLA</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
+<a class="board-row rv" href="https://dial4uflights.co.uk/"><div><div class="board-city">London <span class="code">LON</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
+<a class="board-row rv" href="https://dial4uflights.co.uk/"><div><div class="board-city">Manchester <span class="code">MAN</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
+<a class="board-row rv" href="https://dial4uflights.co.uk/"><div><div class="board-city">Birmingham <span class="code">BHX</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
+<a class="board-row rv" href="https://dial4uflights.co.uk/"><div><div class="board-city">Edinburgh <span class="code">EDI</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
+<a class="board-row rv" href="https://dial4uflights.co.uk/"><div><div class="board-city">Glasgow <span class="code">GLA</span></div><div class="board-country">United Kingdom</div></div><div class="board-arrow"><span class="pulse"></span> → ZANZIBAR</div><div class="board-dest">Zanzibar<span class="code">ZNZ</span></div></a>
 </div>
 </div>
 </section>
@@ -326,7 +344,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 <div class="sj-track">
 <div class="sj-stages" id="sjStages">
 <div class="sj-stage"><div class="sj-stage-bg"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=80" alt="London skyline at dusk" loading="lazy"></div><div class="sj-stage-shade"></div><div class="sj-content"><p class="sj-num">Stage 01</p><h3>Leave the UK</h3><p>Your journey begins at a major UK airport — London, Manchester, Birmingham or beyond. Pack light. The Indian Ocean is waiting.</p></div></div>
-<div class="sj-stage"><div class="sj-stage-bg"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cab0?auto=format&fit=crop&w=1600&q=80" alt="Aircraft wing above clouds" loading="lazy"></div><div class="sj-stage-shade"></div><div class="sj-content"><p class="sj-num">Stage 02</p><h3>Take Off</h3><p>Climb above the clouds. Most routes from the UK to Zanzibar involve a connection through a major hub — a pause before the final leg south.</p></div></div>
+<div class="sj-stage"><div class="sj-stage-bg"><img src="https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?auto=format&fit=crop&w=1600&q=80" alt="Aircraft wing above clouds" loading="lazy"></div><div class="sj-stage-shade"></div><div class="sj-content"><p class="sj-num">Stage 02</p><h3>Take Off</h3><p>Climb above the clouds. Most routes from the UK to Zanzibar involve a connection through a major hub — a pause before the final leg south.</p></div></div>
 <div class="sj-stage"><div class="sj-stage-bg"><img src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&w=1600&q=80" alt="Aerial view of ocean and clouds" loading="lazy"></div><div class="sj-stage-shade"></div><div class="sj-content"><p class="sj-num">Stage 03</p><h3>Cross the Indian Ocean</h3><p>The final approach carries you over warm waters toward the spice islands — a long-haul journey that ends in turquoise and white sand.</p></div></div>
 <div class="sj-stage"><div class="sj-stage-bg"><img src="https://images.unsplash.com/photo-1547531455-c20b677ded4b?auto=format&fit=crop&w=1600&q=80" alt="Zanzibar coastline arrival" loading="lazy"></div><div class="sj-stage-shade"></div><div class="sj-content"><p class="sj-num">Stage 04</p><h3>Arrive in Zanzibar</h3><p>Touch down at Zanzibar International Airport (ZNZ). Stone Town, the east coast beaches and the Indian Ocean are minutes away.</p></div></div>
 </div>
@@ -345,9 +363,9 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 <div class="wrap">
 <div class="comm-head rv"><p class="label">Fare Options</p><h2>Find Your Way to Zanzibar</h2><p>Fares and availability change regularly. Our specialists help you explore the option that fits your trip.</p></div>
 <div class="comm-grid">
-<article class="comm-card rv"><div class="comm-card-bg"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cab0?auto=format&fit=crop&w=800&q=80" alt="Aircraft cabin" loading="lazy"></div><div class="comm-card-shade"></div><div class="comm-card-body"><h3>Economy</h3><p>Smart travel. Flexible flight options across a range of routings.</p><a href="#search" class="btn btn-teal btn-sm">Explore Economy</a></div></article>
-<article class="comm-card rv"><div class="comm-card-bg"><img src="https://images.unsplash.com/photo-1540962351504-02999aee8d72?auto=format&fit=crop&w=800&q=80" alt="Business class cabin" loading="lazy"></div><div class="comm-card-shade"></div><div class="comm-card-body"><h3>Business Class</h3><p>Travel with more comfort on the long-haul sectors to East Africa.</p><a href="tel:+442038317712" class="btn btn-teal btn-sm">Explore Business Class</a></div></article>
-<article class="comm-card rv"><div class="comm-card-bg"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Zanzibar beach" loading="lazy"></div><div class="comm-card-shade"></div><div class="comm-card-body"><h3>Flexible Travel</h3><p>Options designed around your dates and preferred UK departure.</p><a href="#search" class="btn btn-teal btn-sm">Explore Flights</a></div></article>
+<article class="comm-card rv"><div class="comm-card-bg"><img src="https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=800&q=80" alt="Aircraft cabin" loading="lazy"></div><div class="comm-card-shade"></div><div class="comm-card-body"><h3>Economy</h3><p>Smart travel. Flexible flight options across a range of routings.</p><a href="https://dial4uflights.co.uk/" class="btn btn-teal btn-sm">Explore Economy</a></div></article>
+<article class="comm-card rv"><div class="comm-card-bg"><img src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80" alt="Business class cabin" loading="lazy"></div><div class="comm-card-shade"></div><div class="comm-card-body"><h3>Business Class</h3><p>Travel with more comfort on the long-haul sectors to East Africa.</p><a href="tel:+442038317712" class="btn btn-teal btn-sm">Explore Business Class</a></div></article>
+<article class="comm-card rv"><div class="comm-card-bg"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Zanzibar beach" loading="lazy"></div><div class="comm-card-shade"></div><div class="comm-card-body"><h3>Flexible Travel</h3><p>Options designed around your dates and preferred UK departure.</p><a href="https://dial4uflights.co.uk/" class="btn btn-teal btn-sm">Explore Flights</a></div></article>
 </div>
 </div>
 </section>
@@ -357,7 +375,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 <div class="yz-bg" data-trip="honeymoon"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=80" alt="Romantic setting" loading="lazy"></div>
 <div class="yz-bg" data-trip="family"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80" alt="Family beach" loading="lazy"></div>
 <div class="yz-bg" data-trip="safari"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=80" alt="Safari" loading="lazy"></div>
-<div class="yz-bg" data-trip="business"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cab0?auto=format&fit=crop&w=1800&q=80" alt="Premium travel" loading="lazy"></div>
+<div class="yz-bg" data-trip="business"><img src="https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?auto=format&fit=crop&w=1800&q=80" alt="Premium travel" loading="lazy"></div>
 <div class="yz-shade"></div>
 <div class="wrap yz-inner">
 <p class="label">Tell Us About Your Trip</p>
@@ -373,7 +391,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 <div class="yz-panel" role="tabpanel">
 <h3 id="yzTitle">Beach Escape</h3>
 <p id="yzDesc">Explore flight options for a relaxing Zanzibar beach getaway — white sand, warm water and a slower pace on the Indian Ocean.</p>
-<a href="#search" class="btn btn-teal">Find My Flight →</a>
+<a href="https://dial4uflights.co.uk/" class="btn btn-teal">Find My Flight →</a>
 </div>
 </div>
 </section>
@@ -432,7 +450,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 <h2>Your Zanzibar<br>Starts Here.</h2>
 <p class="sub">From the UK to the Indian Ocean</p>
 <div class="final-ctas">
-<a href="#search" class="btn btn-teal">Explore Flight Options →</a>
+<a href="https://dial4uflights.co.uk/" class="btn btn-teal">Explore Flight Options →</a>
 <a href="tel:+442038317712" class="btn btn-ghost">Call +44 20 3831 7712</a>
 </div>
 </div>
@@ -455,7 +473,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-hei
 </div>
 </footer>
 <div class="sticky-bar" aria-label="Quick actions">
-<a href="#search" class="btn btn-teal">Find My Flight</a>
+<a href="https://dial4uflights.co.uk/" class="btn btn-teal">Find My Flight</a>
 <a href="tel:+442038317712" class="btn btn-navy">Call Experts</a>
 </div>
 <script>
@@ -467,6 +485,9 @@ function closeM(){mNav.classList.remove('open');mScrim.classList.remove('show');
 menuBtn.addEventListener('click',function(){var open=mNav.classList.toggle('open');mScrim.classList.toggle('show',open);menuBtn.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':''});
 mScrim.addEventListener('click',closeM);mNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM)});
 document.querySelectorAll('.trip-pills button').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.trip-pills button').forEach(function(b){b.classList.remove('on');b.setAttribute('aria-checked','false')});btn.classList.add('on');btn.setAttribute('aria-checked','true');var isRet=btn.dataset.trip==='return';document.getElementById('isRet').value=isRet;document.getElementById('retFld').style.display=isRet?'':'none'})});
+
+var depIn=document.getElementById('depIn'),retIn=document.getElementById('retIn');
+if(depIn&&!depIn.value){var d=new Date();d.setDate(d.getDate()+21);depIn.value=d.toISOString().slice(0,10);if(retIn){var r=new Date(d);r.setDate(r.getDate()+7);retIn.value=r.toISOString().slice(0,10);}}
 var heroPlane=document.getElementById('heroPlane'),heroProg=0,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(heroPlane&&!rm){function loopHero(){heroProg=(heroProg+.15)%100;heroPlane.style.left=heroProg+'%';requestAnimationFrame(loopHero)}requestAnimationFrame(loopHero)}else if(heroPlane){heroPlane.style.left='70%'}
 var sjSection=document.getElementById('scrollJourney'),sjStages=document.getElementById('sjStages'),sjFill=document.getElementById('sjFill'),sjPlane=document.getElementById('sjPlane');
